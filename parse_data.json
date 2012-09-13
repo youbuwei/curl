@@ -1,0 +1,11 @@
+　{ "tmall": [
+　　{	"title": "'/<input type=\"hidden" name=\"title\" value="(?<this>.*)\" \/>/i'",
+		"price": "'/<input type=\"hidden\" name=\"current_price\" value= \"(?<this>.*) \/>/i'",
+		"pic": "'/<input type=\"hidden\" name=\"photo_url\" value= \"(?<this>.*) \/>/i'" }
+　　],
+	"360buy": [
+　　{	"title": "'/<a target=\'\_blank\' href=\'.*\' onclick=\'this.blur\(\)\;\' clstag\=\'.*\'>(?<this>.*)<\/a>/i'",
+		"price": "/<span class=\'price\'>(?P<this>.*)<\/span>/i","wapprice": "'/<strong class=\"flk31\">(?P<this>.*)<\/strong> <\/div>/i'",
+		"pic": "'/<img src=\'http:\/\/img10.360buyimg.com\/(?<this>.*)\' \/>/i'" }
+	]
+}
