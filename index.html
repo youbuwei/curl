@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Use Curl To  Fetch Data by youbuwei</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Use Curl To  Fetch Data</h1>
+        <p>页面特定数据抓取</p>
+
+        <p class="view"><a href="https://github.com/youbuwei/Curl">View the Project on GitHub <small>youbuwei/Curl</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/youbuwei/Curl/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/youbuwei/Curl/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/youbuwei/Curl">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>welcome﻿</h1>
+
+<h2>介绍</h2>
+
+<blockquote>
+<p>这是一个使用Curl实现页面数据的抓取的小工具。<br>
+示例中已经实现了对天猫，京东商城商品的名称，价格，图片的抓取。<br>
+你可以添加更多的规则以实现对其他网站的数据抓取<br></p>
+</blockquote>
+
+<h2>文件解释</h2>
+
+<ul>
+<li>dataParse.php 为核心类，封装了功能实现的业务逻辑，其中对于天猫数据有特别的处理，请留意。</li>
+<li>curlGet.php   为数据抓取类，无需改动即可使用。</li>
+<li>parse_data.php  将所有正则表达式全部以数组的形式写在这里。如果你需要其他网站的数据，可以将新的正则表达式补在后面即可。</li>
+<li>index.php       这个不用解释。</li>
+</ul><h2>用法</h2>
+
+<p>首先你需要包含 dataParse.php 类。比如<br><code>include_once 'dataParse.php'</code> <br>
+这里只是个例子，使用时请确保文件路径正确！<br></p>
+
+<p>随后就可以实例化 dataParse 类，并调用collect 方法。比如<br><code>$find = new dataParse;</code><br><code>if($_POST)</code>{<br><code>$url = $_POST['url'];</code><br><code>if($result=$find-&gt;collect($url))</code>{<br><code>return $result;</code><br><code>} else {</code><br><code>return false;</code><br><code>}</code><br><code>}</code><br> 
+你也可以修改 dataParse 类 ， 在构造函数中直接调用collect方法，并修改相应的参数。<br>
+这样就能在实例化的时候写更少的代码。<br></p>
+
+<p>最后在parse_data.php中添加你需要的正则表达式即可。<br>
+你需要特别留意你所需抓取页面的编码方式，以免带来不必要的麻烦。</p>
+
+<h2>注意</h2>
+
+<p>这个项目之前很长的一段时间没有维护，部分网站的抓取规则可能有变动，请使用时先仔细检查。<br>
+欢迎你参与到这个小项目的维护中来！<br></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/youbuwei">youbuwei</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
